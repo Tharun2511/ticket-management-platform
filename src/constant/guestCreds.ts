@@ -1,11 +1,4 @@
-export type GuestRole =
-  | "sysadmin"
-  | "orgOwner"
-  | "orgAdmin"
-  | "projectAdmin"
-  | "resolver"
-  | "client"
-  | "viewer";
+export type GuestRole = "sysadmin" | "projectAdmin" | "resolver" | "client";
 
 interface GuestCredential {
   email: string;
@@ -21,40 +14,22 @@ export const GUEST_CREDENTIALS: Record<GuestRole, GuestCredential> = {
     label: "System Admin",
     description: "Full platform access",
   },
-  orgOwner: {
-    email: "owner@acme.com",
-    password: "owner123",
-    label: "Org Owner",
-    description: "Manages Acme Corp",
-  },
-  orgAdmin: {
-    email: "orgadmin@acme.com",
-    password: "orgadmin123",
-    label: "Org Admin",
-    description: "Acme Corp admin",
-  },
   projectAdmin: {
     email: "projadmin@acme.com",
     password: "projadmin123",
     label: "Project Admin",
-    description: "Project Alpha lead",
+    description: "Assigns & closes tickets",
   },
   resolver: {
     email: "resolver@acme.com",
     password: "resolver123",
     label: "Resolver",
-    description: "Resolves tickets",
+    description: "Works & resolves tickets",
   },
   client: {
     email: "client@acme.com",
     password: "client123",
     label: "Client",
-    description: "Creates & views tickets",
-  },
-  viewer: {
-    email: "viewer@acme.com",
-    password: "viewer123",
-    label: "Viewer",
-    description: "Read-only access",
+    description: "Creates & verifies tickets",
   },
 };

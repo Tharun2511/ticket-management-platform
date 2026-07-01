@@ -5,7 +5,6 @@ import { useLogin } from "@/hooks/useLogin";
 import { Box, Button, Typography, Chip, alpha, useTheme } from "@mui/material";
 import {
   Shield,
-  AdminPanelSettings,
   FolderSpecial,
   Build,
   Person,
@@ -17,11 +16,6 @@ const ROLE_CONFIG: Record<
   { icon: ReactNode; color: string; tier: string }
 > = {
   sysadmin: { icon: <Shield />, color: "#dc2626", tier: "System" },
-  orgAdmin: {
-    icon: <AdminPanelSettings />,
-    color: "#2563eb",
-    tier: "Organization",
-  },
   projectAdmin: {
     icon: <FolderSpecial />,
     color: "#0891b2",
@@ -33,7 +27,6 @@ const ROLE_CONFIG: Record<
 
 const ROLE_ORDER: GuestRole[] = [
   "sysadmin",
-  "orgAdmin",
   "projectAdmin",
   "resolver",
   "client",
