@@ -56,6 +56,7 @@ export function useOrgOwnerAnalytics(orgId?: string) {
       setLoading(false);
       return;
     }
+    const activeOrgId = orgId;
 
     let cancelled = false;
 
@@ -68,7 +69,7 @@ export function useOrgOwnerAnalytics(orgId?: string) {
           {
             auth: true,
             headers: {
-              "x-org-id": orgId,
+              "x-org-id": activeOrgId,
             },
           },
         );

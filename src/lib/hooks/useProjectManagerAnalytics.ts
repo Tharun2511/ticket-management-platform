@@ -52,6 +52,7 @@ export function useProjectManagerAnalytics(projectId?: string) {
       setLoading(false);
       return;
     }
+    const activeProjectId = projectId;
 
     let cancelled = false;
 
@@ -64,7 +65,7 @@ export function useProjectManagerAnalytics(projectId?: string) {
           {
             auth: true,
             headers: {
-              "x-project-id": projectId,
+              "x-project-id": activeProjectId,
             },
           },
         );

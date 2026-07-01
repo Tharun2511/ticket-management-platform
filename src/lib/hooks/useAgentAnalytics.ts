@@ -48,6 +48,7 @@ export function useAgentAnalytics(orgId?: string) {
       setLoading(false);
       return;
     }
+    const activeOrgId = orgId;
 
     let cancelled = false;
 
@@ -58,7 +59,7 @@ export function useAgentAnalytics(orgId?: string) {
         const result = await apiClient<AgentAnalytics>("/analytics/agent", {
           auth: true,
           headers: {
-            "x-org-id": orgId,
+            "x-org-id": activeOrgId,
           },
         });
         if (!cancelled) {
